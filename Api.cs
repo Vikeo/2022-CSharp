@@ -4,7 +4,7 @@ using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using DotNet.Responses;
+//using DotNet.Responses;
 using Newtonsoft.Json;
 
 
@@ -12,7 +12,7 @@ namespace DotNet
 {
     public class Api
     {
-        private const string BasePath = "https://api.considition.com/api/games/";
+        private const string BasePath = "https://api.considition.com/api/game/";
         private readonly HttpClient _client;
 
         public Api(string apiKey)
@@ -29,7 +29,7 @@ namespace DotNet
             var data = new StringContent(mapName, Encoding.UTF8, "application/json");
             var response = await _client.GetAsync("mapInfo?MapName=" + mapName);
 
-            var result = await response.Content.ReadAsStringAsync();
+             var result = await response.Content.ReadAsStringAsync();
             if (response.StatusCode != HttpStatusCode.OK)
             {
                 Console.WriteLine("Exception:" + result);
@@ -40,11 +40,11 @@ namespace DotNet
 
             return JsonConvert.DeserializeObject<GameResponse>(result);
         }
-
+         
         public async Task<SubmitResponse> SubmitGame(string solution, string mapName)
         {
             var data = new StringContent(solution, Encoding.UTF8, "application/json");
-            var response = await _client.PostAsync("submit?MapName=" + mapName, data);
+            var response = await _client.PostAsync("submit", data);
             var result = await response.Content.ReadAsStringAsync();
             if (response.StatusCode != HttpStatusCode.OK)
             {

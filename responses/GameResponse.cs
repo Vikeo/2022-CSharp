@@ -8,5 +8,6 @@ namespace DotNet
         public string mapName;
         public int companyBudget;
         public string behavior;
+        public int population;
     }
 }

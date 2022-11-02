@@ -3,7 +3,7 @@ using System.Drawing;
 
 namespace DotNet.models
 {
-    public class Week
+    public class WeekModel
     {
         public int week;
         public int co2;
