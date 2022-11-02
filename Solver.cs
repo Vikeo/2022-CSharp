@@ -10,8 +10,8 @@ namespace DotNet
     public class Solver
     {
         private static List<Double> bagType_price = new List<double> { 1.7, 1.75, 6.0, 25.0, 200.0 };
-        private static List<int> bagType_co2_production = new List<int> { 5, 7, 3, 6, 20 };
-        private static List<int> bagType_co2_transport = new List<int> { 50, 40, 60, 70, 100 };
+        private static List<double> bagType_co2_transport = new List<double> { 3.9, 4.2, 1.8, 3.6, 12.0 };
+        private static List<int> bagType_co2_production = new List<int> { 30, 24, 36, 42, 60 };
 
         public static int population;
         public static int companyBudget;
